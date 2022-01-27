@@ -25,7 +25,7 @@ public class SQLBuilder {
     // Temp table inserts are processed automatically in batches of this size
     private static final int BATCH_SIZE = 1000;
 
-    private static final Logger logger = Logger.getLogger(POS_Loader.class);
+    private static final Logger logger = Logger.getLogger(SQLBuilder.class);
     private StringBuilder buffer;
     private String fileName;
     private String tableName;
@@ -72,10 +72,9 @@ public class SQLBuilder {
 
     /**
     * Automatically configure the fields from provided data. This operation is
-    * strictly optional and primarily intended for the POS_Loader template use.
-    * Normally, the client would have to do similar steps to the below
-    * manually. When using our template, this data is already provided, and so
-    * the below function can automatically make use of said data.
+    * strictly optional. Normally, the client would have to do similar steps to
+    * the below manually. When using the template, this data is already provided,
+    * and so the below function can automatically make use of said data.
     */
     public SQLBuilder fields() throws SQLException {
 
